@@ -3,7 +3,6 @@ title: 'Meu Primeiro Post'
 date: '2026-02-10'
 author: 'Nicholas Pucharelli'
 description: 'Este é o meu primeiro post no blog usando SvelteKit e Markdown'
-layout: blog
 ---
 
 # Meu Primeiro Post
@@ -49,10 +48,10 @@ Você pode adicionar [links](https://svelte.dev) facilmente.
 
 ## Citações
 
-> "A melhor forma de prever o futuro é criá-lo." - Peter Drucker
+> "A única maneira de fazer um ótimo trabalho é amar o que você faz." - Steve Jobs
 
 ## Conclusão
 
-Este é apenas o começo! Vou continuar escrevendo mais posts sobre tecnologia, programação e outros assuntos interessantes.
+Este é apenas o começo! Nos próximos posts, vou compartilhar mais sobre desenvolvimento web, tecnologias e boas práticas.
 
-Até a próxima! 🚀
+Obrigado pela leitura! 🚀
