@@ -1,0 +1,5 @@
+title: 'Meu Primeiro Post'
+date: '2026-02-10'
+author: 'Nicholas Pucharelli'
+description: 'Este é o meu primeiro post no blog usando SvelteKit e Markdown'
+layout: blog

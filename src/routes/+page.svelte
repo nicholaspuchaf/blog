@@ -1,3 +1,20 @@
+<script>
+	import Card from '$lib/layouts/Card.svelte';
+
+	let { data } = $props();
+	const posts = data.posts;
+	
+	// Função para formatar a data
+	function formatDate(dateString) {
+		const date = new Date(dateString);
+		return date.toLocaleDateString('pt-BR', { 
+			day: 'numeric', 
+			month: 'long', 
+			year: 'numeric' 
+		});
+	}
+</script>
+
 <div class="container py-5">
 	<div class="row">
 		<div class="col-lg-8 mx-auto">
@@ -11,53 +28,15 @@
 
 			<!-- Posts List -->
 			<div class="row g-4">
-				<!-- Post Card 1 -->
-				<div class="col-12">
-					<div class="card h-100 shadow-sm hover-card">
-						<div class="card-body">
-							<div class="d-flex justify-content-between align-items-center mb-2">
-								<small class="text-muted">10 de fevereiro de 2026</small>
-								<span class="badge bg-primary">Novo</span>
-							</div>
-							<h2 class="card-title h4 mb-3">
-								<a href="/blog/primeiro-post" class="text-decoration-none text-dark">
-									Meu Primeiro Post
-								</a>
-							</h2>
-							<p class="card-text text-muted">
-								Este é o meu primeiro post no blog usando SvelteKit e Markdown. 
-								Descubra como é fácil escrever conteúdo em Markdown!
-							</p>
-							<a href="/blog/primeiro-post" class="btn btn-outline-primary">
-								Ler mais →
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Post Card 2 -->
-				<div class="col-12">
-					<div class="card h-100 shadow-sm hover-card">
-						<div class="card-body">
-							<div class="d-flex justify-content-between align-items-center mb-2">
-								<small class="text-muted">10 de fevereiro de 2026</small>
-								<span class="badge bg-primary">Novo</span>
-							</div>
-							<h2 class="card-title h4 mb-3">
-								<a href="/blog/segundo-post" class="text-decoration-none text-dark">
-									Configurando um Blog com SvelteKit
-								</a>
-							</h2>
-							<p class="card-text text-muted">
-								Aprenda como configurar um blog pessoal com SvelteKit, Bootstrap e Markdown.
-								Conheça a stack tecnológica utilizada neste projeto.
-							</p>
-							<a href="/blog/segundo-post" class="btn btn-outline-primary">
-								Ler mais →
-							</a>
-						</div>
-					</div>
-				</div>
+				{#each posts as post}
+					<Card 
+						title={post.title}
+						description={post.description}
+						date={formatDate(post.date)}
+						url={post.url}
+						isNew={post.isNew}
+					/>
+				{/each}
 			</div>
 
 			<!-- Footer -->
@@ -72,15 +51,4 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.hover-card {
-		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-	}
-	
-	.hover-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-	}
-</style>
 
