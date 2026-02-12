@@ -14,11 +14,13 @@
 		<div class="container">
 			<div class="d-flex align-items-center justify-content-between">
 				<a href="/" class="text-decoration-none">
-					<h1 class="h4 m-0 fw-bold">Nicholas Blog</h1>
+					<h1 class="h4 m-0 fw-bold">Base voardora no Deserto - blog</h1>
 				</a>
 				<nav class="d-flex gap-3">
 					<a href="/" class="text-muted text-decoration-none">Início</a>
 					<a href="/blog/devops" class="text-muted text-decoration-none">DevOps</a>
+					<a href="/blog/bitcoin" class="text-muted text-decoration-none">Bitcoin</a>
+
 				</nav>
 			</div>
 		</div>

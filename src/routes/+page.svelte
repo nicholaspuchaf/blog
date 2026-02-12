@@ -20,7 +20,7 @@
 		<div class="col-lg-8 mx-auto">
 			<!-- Header -->
 			<header class="mb-5 text-center">
-				<h1 class="display-4 fw-bold mb-3">Nicholas Blog</h1>
+				<h1 class="display-4 fw-bold mb-3">Base voadora no Deserto</h1>
 				<p class="lead text-muted">
 					Compartilhando conhecimentos sobre tecnologia, programação e desenvolvimento web
 				</p>
@@ -39,15 +39,6 @@
 				{/each}
 			</div>
 
-			<!-- Footer -->
-			<footer class="mt-5 pt-4 border-top text-center text-muted">
-				<p>
-					Construído com ❤️ usando 
-					<a href="https://kit.svelte.dev" target="_blank" class="text-decoration-none">SvelteKit</a>, 
-					<a href="https://getbootstrap.com" target="_blank" class="text-decoration-none">Bootstrap</a> e 
-					<a href="https://mdsvex.pngwn.io" target="_blank" class="text-decoration-none">mdsvex</a>
-				</p>
-			</footer>
 		</div>
 	</div>
 </div>
