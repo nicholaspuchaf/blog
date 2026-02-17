@@ -1,0 +1,12 @@
+title: 'Entendendo os interstícios das Lambdas'
+date: '2026-02-15'
+author: 'Nicholas Pucharelli'
+description: 'Saber o que é AWS Lambda, qual a diferença entre isso EC2 e outros tipos de computação, quais as vantagens e desvantagens, quais usos comuns'
+layout: blog
+
+Projeto:
+Titulo: 'Entendendo os interstícios das Lambdas'
+O Problema: 'Saber o que é AWS Lambda, qual a diferença entre isso EC2 e outros tipos de computação, quais as vantagens e desvantagens, quais usos comuns'
+A Solução: 'mostrar uma iniciacao de um projeto com CDK que cria uma lambda conectada a um API Gateway'
+O Pulo do Gato: 'Entender conceitos de custo de Lambdas, Cold Start, Warm Start, Concurrency, Onde e como as Lambdas sao executadas, reaproveitamento de Enviroment para reduzir custo e tempo. Conexoes possiveis dentro do ecosistema da AWS, configuracoes de Payload'
+Conclusao: 'Dar uma visão tanto inicial quanto alguns insights que é bom ter quando foi trabalhar com Lambdas'

@@ -1,12 +1,15 @@
 <script>
 	let { children } = $props();
+
+	const postWidth = 12;
+
 </script>
 
-<div class="container my-5">
+<div class="container">
 	<div class="row">
-		<div class="col-lg-8 mx-auto">
+		<div class={`col-lg-${postWidth} mx-auto`}>
 			<article class="blog-post">
-				<a href="/" class="btn btn-outline-primary mb-4">← Voltar para o blog</a>
+				<a href="/" class="btn btn-outline-primary mb-4">Voltar</a>
 				
 				<div class="post-content">
 					{@render children()}
@@ -83,10 +86,6 @@
 		margin: 1.5rem 0;
 	}
 	
-	.post-content :global(ul, ol) {
-		margin-bottom: 1.5rem;
-		padding-left: 2rem;
-	}
 	
 	.post-content :global(li) {
 		margin-bottom: 0.5rem;

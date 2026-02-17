@@ -1,4 +1,6 @@
-
+---
+layout: '$lib/layouts/BlogPost.svelte'
+---
 # O que é Infrastructure as Code e quais os benefícios de adotar ?
 
 

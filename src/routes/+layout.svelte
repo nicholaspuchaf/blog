@@ -14,7 +14,7 @@
 		<div class="container">
 			<div class="d-flex align-items-center justify-content-between">
 				<a href="/" class="text-decoration-none">
-					<h1 class="h4 m-0 fw-bold">Base voardora no Deserto - blog</h1>
+					<h1 class="h4 m-0 fw-bold">Ilha das Sombras - blog</h1>
 				</a>
 				<nav class="d-flex gap-3">
 					<a href="/" class="text-muted text-decoration-none">Início</a>

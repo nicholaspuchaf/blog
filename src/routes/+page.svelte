@@ -20,7 +20,7 @@
 		<div class="col-lg-8 mx-auto">
 			<!-- Header -->
 			<header class="mb-5 text-center">
-				<h1 class="display-4 fw-bold mb-3">Base voadora no Deserto</h1>
+				<h1 class="display-4 fw-bold mb-3">Ilha das Sombras</h1>
 				<p class="lead text-muted">
 					Compartilhando conhecimentos sobre tecnologia, programação e desenvolvimento web
 				</p>
