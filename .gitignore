@@ -140,4 +140,7 @@ vite.config.ts.timestamp-*
 
 build/
 
-src/routes/blog
+!src/routes/blog/+layout.svelte
+
+src/routes/blog/**/*.md
+src/routes/blog/**/*.yml

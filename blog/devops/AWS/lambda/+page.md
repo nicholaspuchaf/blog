@@ -1,7 +1,3 @@
----
-layout: '$lib/layouts/BlogPost.svelte'
----
-
 # Entendendo os interstícios das Lambdas
 
 ## Introdução
