@@ -107,5 +107,29 @@ Para verificar qual o projeto CloudFormation que será gerada
 Par deployarmos nosso código na AWS.
 
 
-## Tópicos diferenciados
+## Pulos do Gato
 
+### Cold Start e Warm Start
+
+Cold Start é um conceito muito importante de se saber ao se utilizar Lambdas. Quando utilizamos Lambda, subimos o código para a AWS executar, nisso, a AWS disponibiliza um ambiente na nuvem para executar esse código, nisso conta um sistema operacional, uma VM dentro dele e também a inicialização do seu código bem como de todas as bibliotecas que você vai utilizar.
+Esse processo, por vezes é demorado porque precisa carregar vários passos, precisa inicializar ambiente, variavies e tals, isso é chamado de Cold Start, porque é preciso pegar o sistema frio (do zero) e prepará-lo para executar seu código.
+<br/>
+
+Entretanto, uma vez que esse ambiente foi inicializado (um processo "caro") a AWS (costuma) manter esse ambiente por torno de 15 minutos ativo para esperar que essa Lambda seja executada novamente, e caso ela seja executada novamente ele vai reutilizar o ambiente já carregado, esse processo torna muito mais rápida a execução da Lambda e também muito mais barata, isso é chamado de Warm Start. 
+<br/>
+
+Não só isso, caso o ambiente não seja reinicializado (perder o Warm Start), é possível definir variaveis globais e de ambiente que podem ser reutilizadas entre várias execuções das Lambdas, ai que entra outra sacada, é possível desenolvedor a Lambda de tal forma que se aproveite desses casos para ter um desempenho ainda melhor, por exemplo tentar se beneficiar de um cache entre execuções Lambda e evitar fazer o trabalho de computação do 0 - TODAS as vezes. Por isso, quando for utilizar Lambdas tenha em mente Cold Start e Warm Start !
+
+### Concurrency
+
+Concurreny, esse é outro conceito importante ao se trabalhar com aplicações serverless na AWS, como as Lambdas por exemplo. Concurrency significa execução de computação em paralelo, ou seja, caso várias requisições sejam feitas às suas Lambdas, é possível alocar uma execução Lambda para cada para que o processamento seja feito em paralelo, e consequentemente de forma muito mais rápida.
+<br/>
+
+Entretanto, como tudo nessa vida não é flores, ao se trabalhar com execução em paralelo isso vai acarretar em um custo maior, jutasmente porque vai precisar alocar mais Lambdas para executar, levando a mais Cold Starts ... e assim por diante. Entretanto, para muitas aplicações isso não só é benéfico mas é imprescindível. Por isso saber não só que é possível usar paralelismo, mas também o quanto usar, saber identificar esse balanço que traga benefício sem comprometer os custos.
+<br/>
+
+Um último detalher importante de destar é que se for utilizar em projetos pequenos/hobbies pode ser interessante limitar a concurreny para um número baixo para evitar um aumento exacerbado de custos.
+
+### Payload
+
+Ao executar um Lambda podemos passar para ela um paylod (por exemplo um body e headers de um requisição http chegada pelo API Gateway), porém esse payload tem um limite baixo e caso deseje executar uma Lambda com um payload maior é possível escrever dentro de um Bucket S3 e passar a referência de acesso desse Bucket para a Lambda
