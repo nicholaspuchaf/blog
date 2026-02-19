@@ -133,3 +133,5 @@ Um último detalher importante de destar é que se for utilizar em projetos pequ
 ### Payload
 
 Ao executar um Lambda podemos passar para ela um paylod (por exemplo um body e headers de um requisição http chegada pelo API Gateway), porém esse payload tem um limite baixo e caso deseje executar uma Lambda com um payload maior é possível escrever dentro de um Bucket S3 e passar a referência de acesso desse Bucket para a Lambda
+
+<img src="https://blog-f4m.pages.dev/imagem?file=lambda_01.png" />
