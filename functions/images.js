@@ -6,7 +6,7 @@ export async function onRequest(context) {
     return new Response("Nome do arquivo não fornecido", { status: 400 });
   }
 
-  const object = await context.env.MY_BUCKET.get(fileName);
+  const object = await context.env.MYR2_BUCKET.get(fileName);
 
   if (object === null) {
     return new Response("Imagem não encontrada", { status: 404 });
