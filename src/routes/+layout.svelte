@@ -6,6 +6,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>ByteCraft - blog</title>
 </svelte:head>
 
 <div class="d-flex flex-column min-vh-100">
@@ -14,7 +15,7 @@
 		<div class="container">
 			<div class="d-flex align-items-center justify-content-between">
 				<a href="/" class="text-decoration-none">
-					<h1 class="h4 m-0 fw-bold">Ilha das Sombras - blog</h1>
+					<h1 class="h4 m-0 fw-bold">ByteCraft - blog</h1>
 				</a>
 				<nav class="d-flex gap-3">
 					<a href="/" class="text-muted text-decoration-none">Início</a>
