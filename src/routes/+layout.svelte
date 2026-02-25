@@ -8,27 +8,31 @@
 	<title>ByteCraft - blog</title>
 </svelte:head>
 
-<div class="site-wrapper">
-	<header class="site-header">
-		<div class="header-container">
-			<a href="/" class="logo-link">
-				<span class="logo-text">ByteCraft</span>
-			</a>
-			<nav class="nav-menu">
-				<a href="/" class="nav-item">Início</a>
-				<a href="/blog/devops" class="nav-item">DevOps</a>
-				<a href="/blog/bitcoin" class="nav-item">Bitcoin</a>
-			</nav>
+<div class="d-flex flex-column min-vh-100 bg-dark">
+	<header class="bg-dark border-bottom border-secondary sticky-top">
+		<div class="container-fluid px-3 px-lg-4">
+			<div class="d-flex justify-content-between align-items-center py-3">
+				<a href="/" class="text-decoration-none">
+					<span class="fs-4 fw-bold text-white">ByteCraft</span>
+				</a>
+				<nav class="d-flex gap-3 gap-lg-4">
+					<a href="/" class="text-light text-decoration-none fw-medium hover-link">Início</a>
+					<a href="/blog/devops" class="text-light text-decoration-none fw-medium hover-link">DevOps</a>
+					<a href="/blog/bitcoin" class="text-light text-decoration-none fw-medium hover-link">Bitcoin</a>
+					<a href="/blog/financas" class="text-light text-decoration-none fw-medium hover-link">Finanças</a>
+					<a href="/blog/seguranca" class="text-light text-decoration-none fw-medium hover-link">Segurança</a>
+				</nav>
+			</div>
 		</div>
 	</header>
 
-	<main class="main-content">
+	<main class="flex-grow-1 bg-dark">
 		{@render children()}
 	</main>
 
-	<footer class="site-footer">
-		<div class="footer-container">
-			<p>Construído com SvelteKit, Bootstrap e mdsvex</p>
+	<footer class="bg-dark border-top border-secondary py-4 text-center text-muted mt-auto">
+		<div class="container">
+			<p class="mb-1">Construído com SvelteKit, Bootstrap e mdsvex</p>
 			<small>&copy; {new Date().getFullYear()} Nicholas Pucharelli</small>
 		</div>
 	</footer>
@@ -116,6 +120,11 @@
 
 .footer-container p {
 	margin: 0 0 0.5rem 0;
+}
+
+.hover-link:hover {
+	color: #5a9eff !important;
+	transition: color 0.2s;
 }
 
 @media (max-width: 768px) {

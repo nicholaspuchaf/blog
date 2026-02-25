@@ -14,91 +14,39 @@
 	}
 </script>
 
-<section class="hero-section">
-	<div class="hero-content">
-		<h1 class="hero-title">ByteCraft</h1>
-		<p class="hero-subtitle">
+<section class="bg-dark text-white py-5">
+	<div class="container text-center">
+		<h1 class="display-3 fw-bold mb-3">ByteCraft</h1>
+		<p class="lead text-muted fs-5">
 			Compartilhando conhecimentos sobre tecnologia, desenvolvimento e cybersegurança.
 		</p>
 	</div>
 </section>
 
-<section class="posts-section">
-	<div class="posts-container">
-		<div class="posts-grid">
+<section class="bg-dark py-5">
+	<div class="container">
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 			{#each posts as post}
-				<Card
-					title={post.title}
-					description={post.description}
-					date={formatDate(post.date)}
-					url={post.url}
-					isNew={post.isNew}
-					image={post.image}
-				/>
+				<div class="col">
+					<Card
+						title={post.title}
+						description={post.description}
+						date={formatDate(post.date)}
+						url={post.url}
+						isNew={post.isNew}
+						image={post.image}
+					/>
+				</div>
 			{/each}
 		</div>
 	</div>
 </section>
 
 <style>
-.hero-section {
-	background: #1a1d23;
-	padding: 4rem 2rem 3rem;
-	text-align: center;
-}
-
-.hero-content {
-	max-width: 800px;
-	margin: 0 auto;
-}
-
-.hero-title {
-	font-size: 3rem;
-	font-weight: 800;
-	color: #ffffff;
-	margin: 0 0 1rem 0;
-	letter-spacing: -0.03em;
-}
-
-.hero-subtitle {
-	font-size: 1.25rem;
-	color: #b8bdc7;
-	margin: 0;
-	line-height: 1.6;
-}
-
-.posts-section {
-	background: #1a1d23;
-	padding: 3rem 2rem 5rem;
-}
-
-.posts-container {
-	max-width: 1280px;
-	margin: 0 auto;
-}
-
-.posts-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-	gap: 2rem;
-}
-
-@media (max-width: 768px) {
-	.hero-title {
-		font-size: 2rem;
-	}
-	.hero-subtitle {
-		font-size: 1rem;
-	}
-	.posts-grid {
-		grid-template-columns: 1fr;
-		gap: 1.5rem;
-	}
-	.hero-section {
-		padding: 3rem 1rem 2rem;
-	}
-	.posts-section {
-		padding: 2rem 1rem 3rem;
+@media (min-width: 992px) {
+	.row-cols-lg-3 > * {
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
 	}
 }
 </style>
