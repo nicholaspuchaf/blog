@@ -2,7 +2,7 @@
 	let { children } = $props();
 </script>
 
-<div class="bg-dark py-4 py-md-5 min-vh-100">
+<div class="bg-dark py-4 py-md-5">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12 col-lg-10 col-xl-12">
