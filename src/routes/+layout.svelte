@@ -21,6 +21,7 @@
 					<a href="/blog/bitcoin" class="text-light text-decoration-none fw-medium hover-link">Bitcoin</a>
 					<a href="/blog/financas" class="text-light text-decoration-none fw-medium hover-link">Finanças</a>
 					<a href="/blog/seguranca" class="text-light text-decoration-none fw-medium hover-link">Segurança</a>
+					<a href="/machineLearning" class="text-light text-decoration-none fw-medium hover-link">Machine Learning</a>
 				</nav>
 			</div>
 		</div>
