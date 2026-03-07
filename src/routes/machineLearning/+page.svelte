@@ -26,17 +26,17 @@
 	let noiseLevel = $state(10); // Nível de ruído em porcentagem
 
 	function handleCanvasClick(event: MouseEvent) {
-        return;
-		const canvas = event.currentTarget as HTMLCanvasElement;
-		const rect = canvas.getBoundingClientRect();
-		const x = event.clientX - rect.left;
-		const y = event.clientY - rect.top;
+		return;
+		// const canvas = event.currentTarget as HTMLCanvasElement;
+		// const rect = canvas.getBoundingClientRect();
+		// const x = event.clientX - rect.left;
+		// const y = event.clientY - rect.top;
 		
-		// Converte coordenadas do canvas para coordenadas cartesianas
-		const cartesianX = ((x - canvasWidth / 2) / gridSize).toFixed(2);
-		const cartesianY = ((canvasHeight / 2 - y) / gridSize).toFixed(2);
+		// // Converte coordenadas do canvas para coordenadas cartesianas
+		// const cartesianX = ((x - canvasWidth / 2) / gridSize).toFixed(2);
+		// const cartesianY = ((canvasHeight / 2 - y) / gridSize).toFixed(2);
 		
-		points.push({ x: parseFloat(cartesianX), y: parseFloat(cartesianY), canvasX: x, canvasY: y });
+		// points.push({ x: parseFloat(cartesianX), y: parseFloat(cartesianY), canvasX: x, canvasY: y });
 	}
 
 	function clearPoints() {
@@ -453,7 +453,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									{#each noisyPoints as noisyPoint, i}
+									{#each noisyPoints as noisyPoint, i (i) }
 										{@const error = Math.abs(noisyPoint.y - noisyPoint.originalY)}
 										{@const trainSize = Math.floor(noisyPoints.length * splitPercentage / 100)}
 										{@const type = i < trainSize ? 'Treino' : 'Teste'}
@@ -485,7 +485,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									{#each points as point, i}
+									{#each points as point, i (i)}
 										<tr>
 											<td>{i + 1}</td>
 											<td>{point.x}</td>

@@ -1,9 +1,10 @@
 <script>
 	let { title, description, date, url, isNew = false, image = null } = $props();
+	import { resolve } from "$app/paths";
 </script>
 
 <article class="card h-100 bg-light shadow-sm border-0 rounded-3 card-hover">
-	<a href={url} class="text-decoration-none text-dark d-flex flex-column h-100">
+	<a href={resolve(url)} class="text-decoration-none text-dark d-flex flex-column h-100">
 		{#if image}
 			<img src={image} alt={title} class="card-img-top rounded-top-3" style="height: 200px; object-fit: cover; background: #dee2e6;" />
 		{/if}

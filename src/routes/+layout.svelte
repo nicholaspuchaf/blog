@@ -1,6 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	let { children } = $props();
+	import { resolve } from "$app/paths";
 </script>
 
 <svelte:head>
@@ -12,16 +13,16 @@
 	<header class="bg-dark border-bottom border-secondary sticky-top">
 		<div class="container-fluid px-3 px-lg-4">
 			<div class="d-flex justify-content-between align-items-center py-3">
-				<a href="/" class="text-decoration-none">
+				<a href={resolve("/")} class="text-decoration-none">
 					<span class="fs-4 fw-bold text-white">ByteCraft</span>
 				</a>
 				<nav class="d-flex gap-3 gap-lg-4">
-					<a href="/" class="text-light text-decoration-none fw-medium hover-link">Início</a>
-					<a href="/blog/devops" class="text-light text-decoration-none fw-medium hover-link">DevOps</a>
-					<a href="/blog/bitcoin" class="text-light text-decoration-none fw-medium hover-link">Bitcoin</a>
-					<a href="/blog/financas" class="text-light text-decoration-none fw-medium hover-link">Finanças</a>
-					<a href="/blog/seguranca" class="text-light text-decoration-none fw-medium hover-link">Segurança</a>
-					<a href="/machineLearning" class="text-light text-decoration-none fw-medium hover-link">Machine Learning</a>
+					<a href={resolve("/")} class="text-light text-decoration-none fw-medium hover-link">Início</a>
+					<a href={resolve("/blog/devops")} class="text-light text-decoration-none fw-medium hover-link">DevOps</a>
+					<a href={resolve("/blog/bitcoin")} class="text-light text-decoration-none fw-medium hover-link">Bitcoin</a>
+					<a href={resolve("/blog/financas")} class="text-light text-decoration-none fw-medium hover-link">Finanças</a>
+					<a href={resolve("/blog/seguranca")} class="text-light text-decoration-none fw-medium hover-link">Segurança</a>
+					<a href={resolve("/machineLearning")} class="text-light text-decoration-none fw-medium hover-link">Machine Learning</a>
 				</nav>
 			</div>
 		</div>

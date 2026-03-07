@@ -1,5 +1,6 @@
 <script>
 	let { children } = $props();
+	import { resolve } from "$app/paths";
 </script>
 
 <div class="bg-dark py-4 py-md-5">
@@ -7,7 +8,7 @@
 		<div class="row justify-content-center">
 			<div class="col-12 col-lg-10 col-xl-12">
 				<article class="bg-light rounded-3 shadow p-4 p-md-5">
-					<a href="/" class="btn btn-link text-primary text-decoration-none fw-semibold mb-4 p-0">
+					<a href={resolve("/")} class="btn btn-link text-primary text-decoration-none fw-semibold mb-4 p-0">
 						← Voltar ao blog
 					</a>
 					<div class="post-content">

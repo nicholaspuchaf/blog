@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'node:path';
-// @ts-ignore - js-yaml has no types in this project
+// @ts-expect-error - js-yaml has no types in this project
 import yaml from 'js-yaml';
 
 const BLOG_DIR = path.resolve(process.cwd(), 'blog');

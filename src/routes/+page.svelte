@@ -26,7 +26,7 @@
 <section class="bg-dark py-5">
 	<div class="container">
 		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-			{#each posts as post}
+			{#each posts as post (post.title)}
 				<div class="col">
 					<Card
 						title={post.title}
@@ -35,7 +35,7 @@
 						url={post.url}
 						isNew={post.isNew}
 						image={post.image}
-					/>
+					/> 
 				</div>
 			{/each}
 		</div>
