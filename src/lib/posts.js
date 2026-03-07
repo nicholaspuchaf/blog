@@ -42,7 +42,7 @@ export async function getAllPosts() {
       // ensure posix-style url
       const urlPath = rel.split(path.sep).join('/');
       const date = meta.date ? new Date(meta.date) : null;
-      const isNew = date ? (Date.now() - date.getTime()) < 1000 * 60 * 60 * 24 * 7 : false;
+      const isNew = date ? Date.now() - date.getTime() < 1000 * 60 * 60 * 24 * 7 : false;
       const lastSeg = urlPath.split('/').pop();
       posts.push({
         title: meta.title || lastSeg,
@@ -50,7 +50,7 @@ export async function getAllPosts() {
         author: meta.author || '',
         date: meta.date || null,
         url: `/blog/${urlPath}`,
-        isNew
+        isNew,
       });
     } catch {
       // skip invalid metadata

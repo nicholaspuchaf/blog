@@ -1,8 +1,7 @@
 <script>
-	import BlogPost from '$lib/layouts/BlogPost.svelte';
+  import BlogPost from '$lib/layouts/BlogPost.svelte';
 </script>
 
 <BlogPost>
-	<slot />
+  <slot />
 </BlogPost>
-

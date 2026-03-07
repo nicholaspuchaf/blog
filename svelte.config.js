@@ -4,22 +4,22 @@ import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'],
-	preprocess: [
-		vitePreprocess(),
-		mdsvex({
-			extensions: ['.md']
-		})
-	],
-	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: '404.html', // Necessário para Single Page Application (SPA)
-			precompress: false,
-			strict: true
-		})
-	}
+  extensions: ['.svelte', '.md'],
+  preprocess: [
+    vitePreprocess(),
+    mdsvex({
+      extensions: ['.md'],
+    }),
+  ],
+  kit: {
+    adapter: adapter({
+      pages: 'build',
+      assets: 'build',
+      fallback: '404.html', // Necessário para Single Page Application (SPA)
+      precompress: false,
+      strict: true,
+    }),
+  },
 };
 
 export default config;
