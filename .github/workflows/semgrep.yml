@@ -1,0 +1,36 @@
+name: Semgrep OSS Scan
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+  schedule:
+    # Roda toda meia-noite para checar novas vulnerabilidades em dependências
+    - cron: '0 0 * * *'
+
+jobs:
+  semgrep:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    # Impede que o scan rode em forks públicos por segurança (opcional)
+    if: (github.actor != 'dependabot[bot]')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep OSS with SARIF output
+        run: |
+          docker run --rm -v $(pwd):/src returntocorp/semgrep semgrep scan \
+            --config="p/default" \
+            --config="p/javascript" \
+            --config="p/svelte" \
+            --sarif --output=semgrep.sarif
+
+      - name: Upload SARIF file
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
