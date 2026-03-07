@@ -27,4 +27,4 @@ jobs:
         uses: actions/checkout@v4
 
       - run: |
-          semgrep scan --config="p/default" --config="p/javascript" --config="p/svelte" --error
+          semgrep scan --config="auto" --error
