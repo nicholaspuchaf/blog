@@ -144,3 +144,5 @@ build/
 
 src/routes/blog/**/*.md
 src/routes/blog/**/*.yml
+
+package-lock.json
