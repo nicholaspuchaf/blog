@@ -21,10 +21,10 @@ pre-commit:
   parallel: true
   commands:
     linter:
-      glob: "*.{js,ts,jsx,tsx}"
+      glob: "**/*.{js,ts,jsx,tsx,svelte}"
       run: bun eslint {staged_files}
     
     formatter:
-      glob: "*.{js,ts,jsx,tsx}"
+      glob: "**/*.{js,ts,jsx,tsx,svelte}"
       run: bun prettier --check {staged_files}
       stage_fixed: true
